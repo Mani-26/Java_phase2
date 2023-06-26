@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class chatgpt{
+public class First{
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
@@ -8,7 +8,7 @@ public class chatgpt{
         int data = sc.nextInt();
         while (data != -1) {
             list.insertAtBegin(data);
-            data = sc.nextInt(); // Read the next input
+            data = sc.nextInt(); 
         }
         sc.close();
         list.display();
@@ -21,6 +21,8 @@ class LinkedList {
     class Node {
         int data;
         Node next;
+        //pointer  -> will denote the address of the next node 
+        // the value next is refer the any object of node class
 
         Node(int val) {
             data = val;
@@ -34,19 +36,21 @@ class LinkedList {
 
     public void insertAtBegin(int val) {
         Node newNode = new Node(val);
+        // the node will create a object in a memory and it will reference that will be stored in new node  so new node is a reference variable
         if (head == null) {
             head = newNode;
         } else {
+             // list is not empty
             newNode.next = head;
             head = newNode;
         }
     }
 
-    public void display() {
+    public void display() {// traversing
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
-            temp = temp.next;
+            temp = temp.next;//jump
         }
     }
 }
