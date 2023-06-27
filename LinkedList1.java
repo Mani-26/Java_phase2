@@ -1,11 +1,11 @@
 import java.util.*;
-public class First{
+public class LinkedList1{
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner sc = new Scanner(System.in);
         int data = sc.nextInt();
         while (data != -1) {
-            list.insertAtBegin(data);
+            list.append(data);
             data = sc.nextInt(); 
         }
         sc.close();
@@ -14,11 +14,10 @@ public class First{
 }
 class LinkedList {
     Node head;
+    Node tail;
     class Node {
         int data;
         Node next;
-        //pointer  -> will denote the address of the next node 
-        // the value next is refer the any object of node class
         Node(int val) {
             data = val;
             next = null;
@@ -27,22 +26,21 @@ class LinkedList {
     LinkedList() {
         head = null;
     }
-    public void insertAtBegin(int val) {
+    public void append(int val) {
         Node newNode = new Node(val);
-        // the node will create a object in a memory and it will reference that will be stored in new node  so new node is a reference variable
         if (head == null) {
             head = newNode;
+            tail = newNode;
         } else {
-             // list is not empty
-            newNode.next = head;
-            head = newNode;
+            tail.next = newNode;
+            tail = newNode;
         }
     }
-    public void display() {// traversing
+    public void display() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
-            temp = temp.next;//jump
+            temp = temp.next;
         }
     }
 }
