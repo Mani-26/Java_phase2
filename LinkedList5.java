@@ -42,11 +42,12 @@ class LinkedList {
     public void display() {
         if (head == null) {
             System.out.println("List is Empty");
-        } 
+        } else{
         Node temp = head;
         do {
             System.out.print(temp.data + " ");
             temp = temp.next;
         } while (temp != head);
     }
+}
 }
