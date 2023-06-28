@@ -1,11 +1,11 @@
 import java.util.*;
-public class Reverse{
+public class LinkedList5{
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         Scanner sc = new Scanner(System.in);
         int data = sc.nextInt();
         while (data != -1) {
-            list.insertAtBegin(data);
+            list.append(data);
             data = sc.nextInt(); 
         }
         sc.close();
@@ -25,20 +25,28 @@ class LinkedList {
     LinkedList() {
         head = null;
     }
-    public void insertAtBegin(int val) {
+    public void append(int val) {
         Node newNode = new Node(val);
         if (head == null) {
             head = newNode;
-        } else {
             newNode.next = head;
-            head = newNode;
+        } else {
+            Node temp = head;
+            while (temp.next != head) {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+            newNode.next = head;
         }
     }
     public void display() {
+        if (head == null) {
+            System.out.println("List is Empty");
+        } 
         Node temp = head;
-        while (temp != null) {
+        do {
             System.out.print(temp.data + " ");
             temp = temp.next;
-        }
+        } while (temp != head);
     }
 }

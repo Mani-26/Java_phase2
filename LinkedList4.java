@@ -6,11 +6,12 @@ public class LinkedList4{
         int data = sc.nextInt();
         while (data != -1) {
             list.append(data);
-            list.insert(data);
             data = sc.nextInt(); 
         }
         sc.close();
-        list.display();        
+        System.out.print("Original order: ");
+        list.display();             
+        System.out.print("\nReverse order: ");
         list.display1();
     }
 }
@@ -20,9 +21,11 @@ class LinkedList {
     class Node {
         int data;
         Node next;
+        Node prev;
         Node(int val) {
             data = val;
             next = null;
+            prev = null;
         }
     }
     LinkedList() {
@@ -36,6 +39,7 @@ class LinkedList {
             tail = newNode;
         } else {
             tail.next = newNode;
+            newNode.prev = tail;
             tail = newNode;
         }
     }
@@ -46,20 +50,11 @@ class LinkedList {
             temp = temp.next;
         }
     }
-    public void insert(int val) {
-        Node newNode1 = new Node(val);
-        if (head == null) {
-            head = newNode1;
-        } else {
-            newNode1.next = head;
-            head = newNode1;
-        }
-    }
     public void display1() {
-        Node temp = head;
+        Node temp = tail;
         while (temp != null) {
             System.out.print(temp.data + " ");
-            temp = temp.next;
+            temp = temp.prev;
         }
     }
 }

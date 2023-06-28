@@ -25,6 +25,7 @@ class LinkedList {
     }
     LinkedList() {
         head = null;
+        tail = null;
     }
     public void append(int val) {
         Node newNode = new Node(val);
@@ -39,7 +40,7 @@ class LinkedList {
     public void display() {
         Node temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.println(temp.next + " ");
             temp = temp.next;
         }
     }
