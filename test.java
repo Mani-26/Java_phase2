@@ -10,7 +10,7 @@ public class test {
 
             list.insert(data);
         }
-
+sc.close();
         list.display();
     }
 }

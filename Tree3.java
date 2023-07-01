@@ -1,5 +1,5 @@
 import java.util.*;
-public class Tree2 {
+public class Tree3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         BinaryTree bst = new BinaryTree();
