@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class LinkedListHW {
+public class LinkedListHWD2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         LinkedList list = new LinkedList();

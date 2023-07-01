@@ -38,8 +38,6 @@ class linkedlist {
             while (temp != null) {
                 temp = temp.next;
             }
-            temp.next = newnode;
-            newnode.next = head;
 
         }
     }
