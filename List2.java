@@ -6,7 +6,7 @@ public class List2 {
         String str;
         System.out.println("Enter the teams in the ranking table.");
         for (int i = 0; i < 5; i++) {
-            str = sc.next();
+            str = sc.nextLine();
             arr.add(str);
         }
         System.out.println("Enter the rank to be searched");
