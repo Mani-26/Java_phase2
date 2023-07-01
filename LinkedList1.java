@@ -7,7 +7,7 @@ public class LinkedList1{
         while (data != -1) {
             list.append(data);
             data = sc.nextInt(); 
-        }
+        }   
         sc.close();
         list.display();
     }
@@ -40,7 +40,7 @@ class LinkedList {
     public void display() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.next + " ");
+            System.out.println(temp.data + " ");
             temp = temp.next;
         }
     }
