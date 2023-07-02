@@ -1,23 +1,14 @@
 import java.util.*;
-public class Queue1 {
+
+public class QueueHWD3 {
     public static void main(String[] args) {
-        Queue q = new Queue();
         Scanner sc = new Scanner(System.in);
+        Queue q = new Queue();
+        System.out.print("Queue size is ");
         int n = sc.nextInt();
-        int data;
         for (int i = 0; i < n; i++) {
-            data = sc.nextInt();
-            q.enqueue(data);
+            q.enqueue(sc.nextInt());
         }
-        int a = sc.nextInt();
-        sc.close();
-        for (int i = 0; i < a; i++) {
-            System.out.println("Element deleted from the queue is:" + q.dequeue());
-        }
-        System.out.print("Queue is : ");
-        q.display();
-        q.dequeue();
-        q.dequeue();
         q.display();
     }
 }
@@ -63,10 +54,11 @@ class Queue {
         }
         return temp;
     }
+
     public void display() {
         Node temp = front;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
     }
