@@ -4,11 +4,20 @@ public class QueueHWD3 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Queue q = new Queue();
-        System.out.print("Queue size is ");
-        int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < 5; i++) {
             q.enqueue(sc.nextInt());
         }
+        sc.close();
+        q.display();
+        q.dequeue();
+        q.dequeue();
+        System.out.println();
+        q.display();
+        do{
+            q.dequeue();
+        }
+        while (q.dequeue() !=0); 
+        System.out.println();
         q.display();
     }
 }
@@ -45,7 +54,7 @@ class Queue {
 
     public int dequeue() {
         if (front == null) {
-            System.out.print("Queue is Empty");
+            return 0;
         }
         int temp = front.data;
         front = front.next;
@@ -57,6 +66,9 @@ class Queue {
 
     public void display() {
         Node temp = front;
+        if (temp==null) {
+            System.out.println("Queue is empty");
+        }
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;

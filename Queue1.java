@@ -16,9 +16,6 @@ public class Queue1 {
         }
         System.out.print("Queue is : ");
         q.display();
-        q.dequeue();
-        q.dequeue();
-        q.display();
     }
 }
 
@@ -66,7 +63,7 @@ class Queue {
     public void display() {
         Node temp = front;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
     }

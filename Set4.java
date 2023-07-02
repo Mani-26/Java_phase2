@@ -20,6 +20,7 @@ public class Set4 {
             String str = sc.nextLine();
             bowl2.add(str);
         }
+        sc.close();
         System.out.println("Player Set 1");
         for (String str1 : bowl1) {
             System.out.println(str1);
