@@ -60,4 +60,9 @@ class LinkedList{
         newNode.next = temp.next;
         temp.next = newNode;
     }
+    public void add(String string) {
+    }
+    public String get(int n) {
+        return null;
+    }
 }
